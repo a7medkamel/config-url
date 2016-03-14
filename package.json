@@ -1,0 +1,24 @@
+{
+  "name": "config-url",
+  "version": "0.0.1",
+  "description": "get url information from node config file regardless of input format",
+  "main": "index.js",
+  "dependencies": {
+    "config": "^1.19.0",
+    "lodash": "^4.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a7medkamel/config-url.git"
+  },
+  "author": "a7medkamel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/a7medkamel/config-url/issues"
+  },
+  "homepage": "https://github.com/a7medkamel/config-url#readme"
+}
