@@ -19,14 +19,15 @@ config.getUrl = function(key) {
         // } else {
         //   return ret.url;
         // }
-        return url.parse(ret.url);
+        // return url.parse(ret.url);
+        return ret.url;
       }
 
-      if (ret.hostname) {
+      if (ret.hostname || ret.port || ret.protocol) {
         return url.format({
-            hostname  : ret.hostname
+            hostname  : ret.hostname || 'localhost'
           , port      : ret.port
-          , protocol  : ret.protocol
+          , protocol  : ret.protocol || 'http:'
         });
       }
     }
@@ -48,7 +49,7 @@ config.getUrlObject = function(key) {
         return _.extend(ret, _.pick(url.parse(ret.url), 'hostname', 'port', 'protocol'));
       }
 
-      if (ret.hostname) {
+      if (ret.hostname || ret.port || ret.protocol) {
         return _.pick(ret, 'hostname', 'port', 'protocol', 'force_dns_lookup');
       }
     }
