@@ -46,11 +46,11 @@ config.getUrlObject = function(key) {
 
     if (_.isObject(ret)) {
       if (ret.url) {
-        return _.extend(ret, _.pick(url.parse(ret.url), 'hostname', 'port', 'protocol'));
+        return _.pick(url.parse(ret.url), 'hostname', 'port', 'protocol', 'host');
       }
 
       if (ret.hostname || ret.port || ret.protocol) {
-        return _.pick(ret, 'hostname', 'port', 'protocol', 'force_dns_lookup');
+        return _.pick(ret, 'hostname', 'port', 'protocol', 'host');
       }
     }
   }
